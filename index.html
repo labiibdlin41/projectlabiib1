@@ -1,133 +1,34 @@
-/* Reset Dasar supaya rapi di semua browser */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioLearn - Media Pembelajaran Biologi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-body {
-    background-color: #f4f9f4; /* Hijau sangat muda */
-    color: #333;
-}
+    <header class="hero-section">
+        <div class="container">
+            <div class="hero-text">
+                <span class="badge">Media Pembelajaran Biologi SMA</span>
+                <h1>Jelajahi Dunia Biologi dalam Genggamanmu</h1>
+                <p>Belajar konsep biologi, struktur sel, hingga ekosistem dengan materi interaktif yang bisa diakses kapan saja.</p>
+                <div class="cta-buttons">
+                    <a href="materi.html" class="btn btn-primary">Mulai Belajar</a>
+                    <a href="#tentang" class="btn btn-outline">Tentang Peneliti</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://img.freepik.com/free-vector/science-lab-concept-illustration_114360-1282.jpg" alt="Ilustrasi Biologi">
+            </div>
+        </div>
+    </header>
 
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+    <footer>
+        <p>&copy; 2026 Penelitian Pendidikan Biologi - Labiib Defyanda</p>
+    </footer>
 
-/* Hero Section (Bagian Atas) */
-.hero-section {
-    min-height: 100vh; /* Full layar */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 50px 0;
-}
-
-.hero-section .container {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    flex-wrap: wrap; /* Supaya turun ke bawah kalau di HP */
-}
-
-/* Teks Hero */
-.hero-text {
-    flex: 1;
-}
-
-.badge {
-    background-color: #e8f5e9;
-    color: #2e7d32;
-    padding: 5px 15px;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    display: inline-block;
-    margin-bottom: 15px;
-}
-
-h1 {
-    font-size: 3rem;
-    line-height: 1.2;
-    color: #1b5e20; /* Hijau Tua */
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
-
-/* Tombol */
-.cta-buttons {
-    display: flex;
-    gap: 15px;
-}
-
-.btn {
-    text-decoration: none;
-    padding: 12px 30px;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.btn-primary {
-    background-color: #2e7d32;
-    color: white;
-}
-
-.btn-primary:hover {
-    background-color: #1b5e20;
-}
-
-.btn-outline {
-    border: 2px solid #2e7d32;
-    color: #2e7d32;
-}
-
-.btn-outline:hover {
-    background-color: #e8f5e9;
-}
-
-/* Gambar Hero */
-.hero-image {
-    flex: 1;
-    text-align: center;
-}
-
-.hero-image img {
-    max-width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #1b5e20;
-    color: white;
-    font-size: 0.9rem;
-}
-
-/* Tampilan HP (Mobile Responsiveness) */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-    
-    .hero-section .container {
-        flex-direction: column-reverse; /* Gambar di atas, teks di bawah */
-        text-align: center;
-    }
-
-    .cta-buttons {
-        justify-content: center;
-    }
-}
+</body>
+</html>
