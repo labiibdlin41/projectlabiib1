@@ -131,3 +131,118 @@ footer {
         justify-content: center;
     }
 }
+
+/* --- GAYA TAMBAHAN (NETFLIX STYLE) --- */
+
+.section-title {
+    font-size: 1.5rem;
+    color: #1b5e20;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Kategori Cepat */
+.category-section {
+    padding: 20px 0;
+}
+.category-grid {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto; /* Bisa digeser horizontal di HP */
+    padding-bottom: 10px;
+}
+.cat-item {
+    background: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid #ddd;
+    color: #555;
+    font-weight: 600;
+    white-space: nowrap; /* Teks gak turun ke bawah */
+    cursor: pointer;
+    transition: 0.3s;
+}
+.cat-item:hover {
+    background: #2e7d32;
+    color: white;
+    border-color: #2e7d32;
+}
+
+/* Netflix Style Cards */
+.netflix-section {
+    padding: 40px 0;
+}
+.netflix-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.netflix-card {
+    display: block;
+    height: 200px;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    text-decoration: none;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.netflix-card:hover {
+    transform: scale(1.03); /* Efek Zoom pas di-hover */
+}
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    color: white;
+}
+.netflix-card h3 {
+    margin: 5px 0;
+    font-size: 1.4rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+.netflix-card p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    color: #eee;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+.tag {
+    background: #e50914; /* Merah ala Netflix */
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Researcher Section */
+.researcher-section {
+    padding: 50px 0;
+}
+.researcher-box {
+    background: #1b5e20;
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+}
+.researcher-info h3 {
+    color: white;
+    margin-bottom: 15px;
+}
+.researcher-info p {
+    color: #e8f5e9;
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+}
+.link-text {
+    color: #81c784;
+    text-decoration: none;
+    font-weight: bold;
+}
