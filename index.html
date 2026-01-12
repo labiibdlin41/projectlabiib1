@@ -10,9 +10,7 @@
 <body>
 
     <div id="intro-layer">
-        <button id="start-btn" onclick="playIntro()">MULAI BELAJAR 🚀</button>
-        
-        <video id="intro-video" playsinline>
+        <video id="intro-video" autoplay muted playsinline>
             <source src="intro.mp4" type="video/mp4">
             Yah, browsermu gak support video ini.
         </video>
@@ -86,28 +84,25 @@
     </footer>
 
     <script>
-        function playIntro() {
-            const layer = document.getElementById('intro-layer');
-            const btn = document.getElementById('start-btn');
-            const video = document.getElementById('intro-video');
+        const video = document.getElementById('intro-video');
+        const layer = document.getElementById('intro-layer');
 
-            // 1. Sembunyikan tombol, Munculkan video
-            btn.style.display = 'none';
-            video.style.display = 'block';
+        // Coba paksa play saat loading (muted wajib biar jalan)
+        video.play().catch(error => {
+            console.log("Autoplay error:", error);
+            // Kalau gagal play (browser lemot/block), langsung sembunyikan intro
+            layer.style.display = 'none';
+        });
 
-            // 2. Play Video
-            video.play();
-
-            // 3. Pas video selesai, hilangkan layer hitam
-            video.onended = function() {
-                layer.style.opacity = '0'; // Efek memudar
-                
-                // Tunggu 0.8 detik biar efek pudar selesai, baru hapus
-                setTimeout(() => {
-                    layer.style.display = 'none';
-                }, 800); 
-            };
-        }
+        // Pas video selesai, hilangkan layer hitam
+        video.onended = function() {
+            layer.style.opacity = '0'; // Efek memudar
+            
+            // Tunggu 0.8 detik biar efek pudar selesai, baru hapus
+            setTimeout(() => {
+                layer.style.display = 'none';
+            }, 800); 
+        };
     </script>
 
 </body>
