@@ -9,21 +9,14 @@
 </head>
 <body>
 
-    <div class="netflix-intro">
-        <div class="intro-b">B</div>
-    </div>
-
-    <header class="hero-section">
-        <div class="container">
-            <div class="hero-text">
-                <span class="badge">Edisi 2026</span>
-                <h1>Biology Learning Hub</h1>
-                <p>Platform belajar biologi interaktif berbasis visual. Pilih topikmu dan mulailah bereksperimen.</p>
-                <div class="cta-buttons">
-                    <a href="materi.html" class="btn btn-primary">Lihat Semua Materi</a>
-                </div>
-            </div>
-            </div>
+ <div id="intro-layer">
+    <button id="start-btn" onclick="playIntro()">MULAI BELAJAR 🚀</button>
+    
+    <video id="intro-video" playsinline>
+        <source src="intro.mp4" type="video/mp4">
+        Yah, browsermu gak support video ini.
+    </video>
+</div>
     </header>
 
     <section class="category-section">
