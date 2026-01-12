@@ -1,39 +1,55 @@
-/* --- 1. INTRO ANIMATION (HURUF B) --- */
-.netflix-intro {
+/* =========================================
+   1. INTRO VIDEO PLAYER (PENGGANTI ANIMASI LAMA)
+   ========================================= */
+/* Layar Hitam Penutup */
+#intro-layer {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000; /* Layar hitam pekat */
-    z-index: 9999;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    z-index: 99999; /* Paling atas menutupi web */
     display: flex;
+    flex-direction: column; /* Biar tombol ada di bawah/tengah */
     justify-content: center;
     align-items: center;
-    animation: fadeOutBg 2.5s ease-in-out forwards;
-    animation-delay: 2.2s; /* Muncul sebentar sebelum hilang */
+    transition: opacity 1s ease-out; /* Efek memudar saat selesai */
 }
 
-.intro-b {
-    font-size: 8rem; /* Ukuran B */
-    font-weight: 900;
-    color: #E50914; /* Merah Netflix */
+/* Video Player (Awalnya sembunyi, muncul pas tombol diklik) */
+#intro-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Biar video full screen gak gepeng */
+    display: none; 
+}
+
+/* Tombol Mulai ala Netflix */
+#start-btn {
+    padding: 15px 50px;
+    font-size: 1.5rem;
+    font-weight: 700;
     font-family: 'Montserrat', sans-serif;
-    animation: scaleUpB 2s ease-in-out forwards;
+    color: white;
+    background-color: #E50914; /* Merah Netflix */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.5);
+    transition: transform 0.2s, background-color 0.2s;
+    z-index: 100000;
 }
 
-@keyframes scaleUpB {
-    0% { transform: scale(1); opacity: 0; }
-    50% { opacity: 1; }
-    100% { transform: scale(4); opacity: 0; }
+#start-btn:hover {
+    transform: scale(1.1);
+    background-color: #f40612;
 }
 
-@keyframes fadeOutBg {
-    0% { opacity: 1; }
-    100% { opacity: 0; visibility: hidden; }
-}
-
-/* --- 2. RESET & GLOBAL STYLES --- */
+/* =========================================
+   2. GLOBAL STYLES (WEBSITE ASLI)
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -43,7 +59,7 @@
 
 body {
     background-color: #141414; /* Hitam Netflix */
-    color: #ffffff; /* Teks Putih */
+    color: #ffffff;
     overflow-x: hidden;
 }
 
@@ -60,7 +76,9 @@ body {
     --net-gray: #b3b3b3;
 }
 
-/* --- 3. HERO SECTION (BANNER UTAMA) --- */
+/* =========================================
+   3. HERO SECTION (BANNER UTAMA)
+   ========================================= */
 .hero-section {
     height: 85vh;
     position: relative;
@@ -73,12 +91,12 @@ body {
     background-position: center;
 }
 
-/* Sembunyikan gambar kartun lama */
 .hero-image { display: none; } 
 
 .hero-text {
     max-width: 600px;
     z-index: 2;
+    padding-left: 4%; /* Tambahan biar rapi */
 }
 
 .badge {
@@ -121,9 +139,11 @@ p {
 .btn-primary::before { content: '▶'; font-size: 0.8rem; }
 .btn-primary:hover { background-color: #c10811; }
 
-/* --- 4. KATEGORI & JUDUL --- */
+/* =========================================
+   4. KATEGORI & JUDUL
+   ========================================= */
 .section-title {
-    color: white; /* Pastikan Putih, bukan Hijau */
+    color: white;
     font-size: 1.5rem;
     margin-bottom: 15px;
     margin-top: 40px;
@@ -139,7 +159,7 @@ p {
 }
 
 .cat-item {
-    background: rgba(255,255,255,0.1); /* Transparan Gelap */
+    background: rgba(255,255,255,0.1);
     color: var(--net-gray);
     border: 1px solid rgba(255,255,255,0.2);
     padding: 8px 20px;
@@ -148,82 +168,4 @@ p {
     cursor: pointer;
     transition: 0.3s;
 }
-.cat-item:hover {
-    background: white;
-    color: black;
-}
-
-/* --- 5. NETFLIX CARDS (MATERI) --- */
-.netflix-section .container { padding: 0; } /* Full width */
-
-.netflix-grid {
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-    padding: 10px 4%;
-    scrollbar-width: none;
-}
-.netflix-grid::-webkit-scrollbar { display: none; }
-
-.netflix-card {
-    min-width: 300px;
-    height: 170px;
-    border-radius: 4px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    text-decoration: none;
-    transition: transform 0.3s ease;
-}
-.netflix-card:hover {
-    transform: scale(1.05); /* Zoom Effect */
-    z-index: 10;
-}
-
-.card-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 15px;
-    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-}
-
-.netflix-card h3 {
-    color: white;
-    font-size: 1rem;
-    margin-bottom: 5px;
-}
-.tag {
-    background-color: var(--net-red);
-    color: white;
-    padding: 2px 6px;
-    font-size: 0.6rem;
-    font-weight: bold;
-    border-radius: 2px;
-}
-
-/* --- 6. FOOTER & RESEARCHER --- */
-.researcher-box {
-    background: linear-gradient(45deg, #000000, #2c0405);
-    border-top: 2px solid var(--net-red);
-    padding: 40px;
-    text-align: center;
-    margin-top: 50px;
-}
-.link-text { color: var(--net-red); font-weight: bold; text-decoration: none; }
-footer {
-    text-align: center;
-    padding: 30px;
-    color: #555;
-    font-size: 0.8rem;
-}
-
-/* RESPONSIVE HP */
-@media (max-width: 768px) {
-    h1 { font-size: 2.5rem; }
-    .hero-section { height: 60vh; background-position: center; }
-    .hero-text { text-align: center; margin-top: 50px;}
-    .cta-buttons { justify-content: center; }
-    .intro-b { font-size: 5rem; } /* Huruf B lebih kecil di HP */
-}
+.cat-item
