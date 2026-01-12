@@ -8,7 +8,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+<body>
+    <div class="netflix-intro">
+        <div class="intro-b">B</div>
+    </div>
 
+    ```
+
+**2. Tambahkan CSS Preloader**
+Buka file `style.css`. Tambahkan kode ini di bagian **paling atas**, sebelum `* { margin: 0... }`:
+
+```css
+/* --- INTRO ANIMATION (THE "B") --- */
+.netflix-intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* Layar hitam pekat */
+    z-index: 9999; /* Supaya selalu di paling depan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeOutBg 2.5s ease-in-out forwards; /* Animasi layar hilang */
+    animation-delay: 2s; /* Nunggu 2 detik baru hilang */
+}
+
+.intro-b {
+    font-size: 10rem;
+    font-weight: 900;
+    color: #E50914; /* Merah Netflix */
+    font-family: 'Montserrat', sans-serif; /* Kita ganti font nanti */
+    animation: scaleUpB 2s ease-in-out forwards; /* Animasi huruf membesar */
+}
+
+/* Definisi Gerakan Animasi */
+@keyframes scaleUpB {
+    0% { transform: scale(1); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: scale(4); opacity: 0; } /* Membesar lalu hilang */
+}
+
+@keyframes fadeOutBg {
+    0% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+}
     <header class="hero-section">
         <div class="container">
             <div class="hero-text">
