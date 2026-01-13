@@ -85,21 +85,26 @@
 
         </main>
 
-        <aside class="sidebar">
-            <div class="toc-container">
-              <h3>Sub Bab</h3>
-              <nav class="toc-menu">
-                <a href="#sub-1" class="toc-link">
-                    <span class="num">01</span> Tingkatan Kehati
-                </a>
-                <a href="#sub-2" class="toc-link">
-                    <span class="num">02</span> Persebaran Fauna
-                </a>
-            </nav>
-        </div>
-    </aside>
+        <div class="floating-menu-container">
+    
+    <div id="toc-list" class="floating-list">
+        <h3>Daftar Isi</h3>
+        <a href="#sub-1" onclick="toggleMenu()">01. Tingkatan Kehati</a>
+        <a href="#sub-2" onclick="toggleMenu()">02. Persebaran Fauna</a>
+    </div>
+
+    <button class="fab-btn" onclick="toggleMenu()">
+        <span class="icon">☰</span> SUB BAB
+    </button>
+</div>
 
     </div>
 
+    <script>
+    function toggleMenu() {
+        var menu = document.getElementById("toc-list");
+        menu.classList.toggle("show");
+    }
+</script>
 </body>
 </html>
