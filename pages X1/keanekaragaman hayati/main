@@ -1,1 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar: Keanekaragaman Hayati - BIOFLIX</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="lesson-page">
 
+    <nav class="watch-nav">
+        <div class="container nav-flex">
+            <a href="index.html" class="back-btn">
+                <span>&#8592;</span> Kembali ke Daftar Materi
+            </a>
+            <div class="logo">BIOFLIX</div>
+        </div>
+    </nav>
+
+    <div class="container lesson-container">
+        
+        <main class="lesson-content">
+            
+            <header class="lesson-header">
+                <span class="tag">Kelas X &bull; Bab 1</span>
+                <h1>Keanekaragaman Hayati</h1>
+                <p class="lesson-intro">
+                    Di bab ini, kita akan mempelajari variasi makhluk hidup mulai dari tingkat gen hingga ekosistem, serta persebarannya di Indonesia.
+                </p>
+            </header>
+
+            <div class="media-box">
+                <iframe 
+                    src="https://www.youtube.com/embed/P-s_TqVpCkw?si=XxX_Example" 
+                    title="Video Pembelajaran" frameborder="0" allowfullscreen>
+                </iframe>
+            </div>
+
+            <article class="lesson-body">
+                
+                <h3>1. Tingkatan Keanekaragaman</h3>
+                <p>Keanekaragaman hayati tidak hanya soal "banyaknya hewan". Ada tiga level yang harus kamu pahami:</p>
+                
+                <div class="highlight-box">
+                    <ul>
+                        <li><strong>Gen:</strong> Variasi dalam satu spesies (Contoh: Rambut keriting vs lurus).</li>
+                        <li><strong>Jenis (Spesies):</strong> Variasi antar spesies (Contoh: Kucing vs Harimau).</li>
+                        <li><strong>Ekosistem:</strong> Variasi tempat tinggal (Contoh: Gurun vs Hutan Hujan).</li>
+                    </ul>
+                </div>
+
+                <figure class="lesson-figure">
+                   
+                    <figcaption>Diagram Tingkatan Keanekaragaman Hayati</figcaption>
+                </figure>
+
+                <h3>2. Persebaran Fauna di Indonesia</h3>
+                <p>Indonesia itu unik karena dilewati dua garis khayal: <strong>Garis Wallace</strong> dan <strong>Garis Weber</strong>. Ini membagi hewan kita jadi 3 tipe:</p>
+
+                <div class="card-grid-small">
+                    <div class="small-card">
+                        <h4>Asiatis (Barat)</h4>
+                        <p>Hewan menyusui besar (Gajah, Harimau).</p>
+                    </div>
+                    <div class="small-card">
+                        <h4>Peralihan (Tengah)</h4>
+                        <p>Hewan khas Indonesia (Komodo, Anoa).</p>
+                    </div>
+                    <div class="small-card">
+                        <h4>Australis (Timur)</h4>
+                        <p>Hewan berkantung (Kanguru pohon, Cendrawasih).</p>
+                    </div>
+                </div>
+
+            </article>
+
+            <div class="lesson-footer">
+                <button class="btn-primary">Lanjut ke Bab Selanjutnya &#8594;</button>
+            </div>
+
+        </main>
+
+        <aside class="sidebar">
+            <h3>Daftar Materi Kelas X</h3>
+            <div class="chapter-list">
+                <a href="#" class="chapter-item active">
+                    <span class="chap-num">01</span>
+                    <div class="chap-info">
+                        <h4>Keanekaragaman Hayati</h4>
+                        <span class="type-icon">📺 Video + 📄 Teks</span>
+                    </div>
+                </a>
+
+                <a href="#" class="chapter-item">
+                    <span class="chap-num">02</span>
+                    <div class="chap-info">
+                        <h4>Virus & Bakteri</h4>
+                        <span class="type-icon">📄 Bacaan Ringkas</span>
+                    </div>
+                </a>
+
+                <a href="#" class="chapter-item">
+                    <span class="chap-num">03</span>
+                    <div class="chap-info">
+                        <h4>Ekosistem & Rantai Makanan</h4>
+                        <span class="type-icon">📺 Video Interaktif</span>
+                    </div>
+                </a>
+            </div>
+        </aside>
+
+    </div>
+
+</body>
+</html>
