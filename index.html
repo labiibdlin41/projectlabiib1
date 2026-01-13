@@ -17,6 +17,9 @@
     </div>
 
     <header class="hero-section">
+        <div class="cta-buttons">
+        <a href="#mulai-belajar" class="btn-primary">Mulai Sekarang</a>
+    </div>
         <div class="container">
             <div class="hero-text">
                 <span class="badge">Biology</span>
@@ -27,12 +30,13 @@
                 </div>
             </div>
         </div>
-        <div class="scroll-down">
-            <span>&#8595;</span>
+          <a href="#mulai-belajar" style="text-decoration: none; color: white;">
+             <span>&#8595;</span>
+          </a>
         </div>
     </header>
 
-    <section class="category-section">
+    <section id="mulai-belajar" class="category-section">
         <div class="container">
             <h2 class="section-title">Mau Belajar Apa Hari Ini?</h2>
             <div class="category-grid">
@@ -90,7 +94,23 @@
         const video = document.getElementById('intro-video');
         const layer = document.getElementById('intro-layer');
 
-        // Autoplay Muted
+        video.load();
+
+        var playPromise = video.play();
+
+        if (playPromise !== undefined) {
+            playPromise.then(_ => {
+                // Autoplay berhasil jalan!
+                console.log("Video playing...");
+            })
+            .catch(error => {
+                // Autoplay dicegah browser (biasanya mode hemat daya/kuota)
+                console.log("Autoplay dicegah:", error);
+                // Kalau dicegah, langsung hilangkan intro biar gak layar hitam doang
+                layer.style.display = 'none';
+            });
+        }
+        
         video.play().catch(error => {
             console.log("Autoplay error:", error);
             layer.style.display = 'none';
