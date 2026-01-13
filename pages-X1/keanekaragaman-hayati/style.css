@@ -300,6 +300,87 @@ body.lesson-page {
     font-size: 0.9rem;
 }
 
+/* 1. KANVAS UTAMA (Background Ghibli Style dikit) */
+.biodiversity-container {
+    width: 100%;
+    height: 250px; /* Tinggi area animasi */
+    background: linear-gradient(to bottom, #87CEEB, #E0F7FA); /* Langit biru cerah */
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px; /* Biar ujungnya gak kaku */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin: 20px 0; /* Jarak atas bawah dari teks */
+}
+
+/* 2. TANAH (Habitat) */
+.land {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #558B2F; /* Hijau rumput */
+    border-top: 5px solid #33691E; /* Aksen rumput tua */
+}
+
+/* 3. PEMERAN (Sapi, Ayam, Pohon, Orang) */
+/* Ini nanti diganti pakai url('gambar-sapi.png') */
+
+/* SAPI (Bergerak lambat makan rumput) */
+.pixel-cow {
+    width: 40px; height: 30px;
+    background: white; border: 2px solid black; /* Simulasi sapi perah */
+    position: absolute;
+    bottom: 10px; left: 10%;
+    animation: grazing 4s infinite ease-in-out alternate;
+}
+
+/* AYAM (Gerak lincah) */
+.pixel-chicken {
+    width: 10px; height: 10px;
+    background: orange;
+    position: absolute;
+    bottom: 5px; right: 20%;
+    animation: peck 1s infinite steps(2);
+}
+
+/* POHON (Diam tapi goyang kena angin) */
+.pixel-tree {
+    width: 30px; height: 80px;
+    background: #4E342E;
+    position: absolute;
+    bottom: 20px; left: 5%;
+}
+.pixel-tree::after { /* Daunnya */
+    content: ''; position: absolute; top: -30px; left: -15px;
+    width: 60px; height: 60px; background: #2E7D32; border-radius: 50%;
+}
+.tree-2 { left: 80%; transform: scale(0.8); } /* Pohon kedua lebih kecil */
+
+/* ORANG (Jalan santai) */
+.pixel-human {
+    width: 15px; height: 40px;
+    background: #D32F2F; /* Baju merah */
+    position: absolute;
+    bottom: 10px; left: 40%;
+    animation: walk 5s linear infinite;
+}
+
+/* 4. ANIMASI GERAKANNYA */
+@keyframes grazing {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(20px); } /* Sapi jalan dikit */
+}
+@keyframes peck {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); } /* Ayam lompat2 */
+}
+@keyframes walk {
+    0% { left: 40%; transform: scaleX(1); }
+    50% { left: 60%; transform: scaleX(1); }
+    51% { left: 60%; transform: scaleX(-1); } /* Balik badan */
+    100% { left: 40%; transform: scaleX(-1); } /* Jalan balik */
+}
+
 /* Khusus Media Box Video (biar tetep rasio 16:9) */
 .media-box.placeholder-content {
     background: #eee; /* Sedikit lebih gelap buat video */
