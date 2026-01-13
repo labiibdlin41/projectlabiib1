@@ -253,3 +253,55 @@ body.lesson-page {
     .floating-menu-container { bottom: 20px; right: 20px; }
     .fab-btn { padding: 12px 20px; font-size: 0.8rem; }
 }
+
+
+/* =========================================
+   STYLE: PLACEHOLDER (WADAH KOSONG) 📦
+   ========================================= */
+
+/* Kelas tambahan untuk wadah kosong */
+.placeholder-content {
+    background-color: #f9f9f9; /* Abu sangat muda */
+    border: 3px dashed #d1d5db; /* Garis putus-putus */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 300px; /* Tinggi minimal biar kotak gak gepeng */
+    border-radius: 15px;
+    transition: 0.3s;
+    cursor: pointer; /* Biar kerasa bisa diedit */
+}
+
+.placeholder-content:hover {
+    background-color: #f0fdf4; /* Jadi hijau muda pas disentuh */
+    border-color: var(--pastel-green);
+}
+
+.placeholder-text span {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 10px;
+    opacity: 0.5;
+}
+
+.placeholder-text p {
+    font-family: var(--lemon-milk);
+    color: #9ca3af;
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.placeholder-text small {
+    font-family: var(--body-text);
+    color: #9ca3af;
+    font-size: 0.9rem;
+}
+
+/* Khusus Media Box Video (biar tetep rasio 16:9) */
+.media-box.placeholder-content {
+    background: #eee; /* Sedikit lebih gelap buat video */
+    aspect-ratio: 16/9;
+    height: auto; /* Biar ngikutin rasio */
+}
