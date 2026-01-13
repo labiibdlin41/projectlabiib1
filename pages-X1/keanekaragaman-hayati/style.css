@@ -6,14 +6,14 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800&family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
-    --canvas-bg: #fdfcf6;      /* Warna Dasar Kanvas (Krem Muda banget) */
-    --paper-white: #ffffff;    /* Warna Kertas Materi */
-    --lemon-milk: 'League Spartan', sans-serif; /* Font Judul */
-    --body-text: 'Lora', serif;                 /* Font Bacaan */
+    --canvas-bg: #fdfcf6;
+    --paper-white: #ffffff;
+    --lemon-milk: 'League Spartan', sans-serif;
+    --body-text: 'Montserrat', serif;
     
-    --pastel-green: #88b04b;   /* Aksen Hijau Pastel */
-    --pastel-brown: #d7bfa6;   /* Aksen Coklat Pastel */
-    --dark-ink: #4a4a4a;       /* Warna Teks (Abu tua, bukan hitam pekat biar lembut) */
+    --pastel-green: #88b04b;
+    --pastel-brown: #d7bfa6;
+    --dark-ink: #212121;
 }
 
 /* 2. BACKGROUND KANVAS POLOS */
@@ -104,9 +104,10 @@ body.lesson-page {
 }
 .lesson-body p, li { 
     font-family: var(--body-text); 
-    font-size: 1.15rem; 
-    line-height: 1.9; 
-    color: var(--dark-ink); 
+    font-size: 1.1rem; 
+    line-height: 1.8; 
+    color: var(--dark-ink);
+    margin-bottom: 20px;
 }
 
 /* Highlight Box (Pastel Green) */
