@@ -1,133 +1,152 @@
 /* =========================================
-   STYLE: GHIBLI NATURE VIBE 🌿
+   STYLE: GHIBLI ADVENTURE JOURNAL (REVISI BLENDED) 🌿📜
    ========================================= */
 
-/* 1. IMPORT FONT BARU (Yang lebih klasik/cantik) */
+/* Import Font yang cocok (Lora untuk teks, Patrick Hand untuk tulisan tangan) */
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Patrick+Hand&display=swap');
 
-/* 2. SETUP WARNA ALAM */
 :root {
-    --ghibli-green: #4a6741;   /* Hijau Hutan Tua */
-    --ghibli-cream: #f9f7f2;   /* Warna Kertas Kuno */
-    --ghibli-sky: #87ceeb;     /* Biru Langit Pudar */
-    --ghibli-wood: #8b5a2b;    /* Coklat Kayu */
-    --text-color: #2c3e50;
+    --paper-cream: #fcfaf2;    /* Warna kertas tua terang */
+    --wood-frame: #8b5a2b;     /* Warna bingkai kayu */
+    --forest-green: #2d4a22;   /* Hijau tua untuk teks penting */
+    --ink-color: #333;         /* Warna tinta standar */
 }
 
-* {
-    margin: 0; padding: 0; box-sizing: border-box;
-}
-
-/* 3. BACKGROUND UTAMA (Pemandangan) */
+/* --- 1. SETUP BACKGROUND & BODY --- */
 body.lesson-page {
-    /* Ganti URL ini dengan gambar pemandangan Ghibli favoritmu nanti */
-    background-image: url('https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?q=80&w=2574&auto=format&fit=crop'); 
+    /* Background Ghibli yang cerah (Hutan/Langit) */
+    background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2670&auto=format&fit=crop'); 
     background-size: cover;
-    background-attachment: fixed; /* Biar gambarnya diem pas di-scroll */
-    background-position: center;
-    font-family: 'Lora', serif; /* Font kayak buku cerita */
-    color: var(--text-color);
+    background-attachment: fixed;
+    background-position: center bottom; /* Fokus ke bagian bawah gambar */
+    font-family: 'Lora', serif;
+    color: var(--ink-color);
 }
 
-/* Biar teks kebaca, kita kasih lapisan putih transparan di atas background */
+/* Lapisan Gelap Tipis di atas (biar Header & Navbar kebaca) */
 body.lesson-page::before {
-    content: "";
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(255, 255, 255, 0.4); /* Efek kabut tipis */
-    z-index: -1;
+    content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 40%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent); /* Gradasi hitam ke transparan */
+    z-index: -1; pointer-events: none;
 }
 
-/* 4. NAVBAR (Kayak Papan Kayu / Minimalis) */
+
+/* --- 2. NAVBAR (Transparan Minimalis) --- */
 .watch-nav {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 15px 0;
-    box-shadow: 0 4px 15px rgba(74, 103, 65, 0.1);
-    backdrop-filter: blur(5px);
-    position: sticky; top: 0; z-index: 100;
+    background: rgba(0, 0, 0, 0.2); /* Agak gelap transparan */
+    backdrop-filter: blur(3px); /* Efek kaca buram */
+    padding: 15px 0; border: none;
 }
-.nav-flex { display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; padding: 0 20px;}
-.logo { font-family: 'Patrick Hand', cursive; font-size: 1.8rem; color: var(--ghibli-green); font-weight: bold; }
-.back-btn { text-decoration: none; color: var(--ghibli-green); font-weight: bold; font-family: 'Patrick Hand', cursive; font-size: 1.2rem;}
+.logo { font-family: 'Patrick Hand', cursive; color: #fff; letter-spacing: 2px; text-shadow: 1px 1px 5px rgba(0,0,0,0.5); }
+.back-btn { color: #ddd; font-family: 'Patrick Hand', cursive; }
+.back-btn:hover { color: #fff; }
 
-/* 5. KONTAINER UTAMA (Kertas Jurnal) */
+
+/* --- 3. CONTAINER UTAMA (Transparan! Gak Ada Kotak Blogspot Lagi) --- */
 .lesson-container {
-    max-width: 1000px;
-    margin: 40px auto;
-    background: var(--ghibli-cream); /* Warna Kertas */
-    padding: 50px;
-    border-radius: 15px; /* Sudut tumpul */
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1); /* Bayangan lembut */
+    max-width: 1100px; margin: 0 auto; padding: 40px 20px;
+    /* HAPUS background & shadow di sini */
+    background: transparent;
+    box-shadow: none;
     
-    /* Layout Grid dihapus dulu biar fokus ke "Membaca Buku" */
-    display: flex; flex-direction: column; gap: 30px;
+    display: grid; grid-template-columns: 3fr 1fr; gap: 40px;
 }
 
-/* 6. TYPOGRAPHY (Judul Cantik) */
+
+/* --- 4. HEADER JUDUL (Melayang di Langit) --- */
+.lesson-header { 
+    text-align: center; margin-bottom: 50px; color: white; /* Teks Putih */
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.7); /* Bayangan teks biar pop-up */
+}
 .lesson-header h1 {
-    font-size: 3rem; color: var(--ghibli-green);
-    margin-bottom: 10px;
-    font-style: italic;
+    font-size: 3.5rem; font-style: italic; font-weight: normal; margin: 15px 0;
 }
 .tag {
-    background: var(--ghibli-green); color: white;
-    padding: 5px 15px; border-radius: 50px;
-    font-family: 'Patrick Hand', cursive; letter-spacing: 1px;
+    background: var(--forest-green); color: #eee;
+    padding: 5px 15px; border-radius: 4px; font-family: 'Patrick Hand', cursive;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
-.lesson-intro { font-size: 1.2rem; line-height: 1.8; color: #555; }
+.lesson-intro { 
+    font-size: 1.2rem; color: #eee; max-width: 700px; margin: 0 auto;
+}
 
-/* 7. VISUALISASI VIDEO (Frame Lukisan) */
+
+/* --- 5. VIDEO PLAYER (Bingkai Kayu Ajaib) --- */
 .media-box {
-    border: 10px solid white;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    border-radius: 5px;
-    overflow: hidden;
     aspect-ratio: 16/9;
+    border: 12px solid var(--wood-frame); /* Bingkai Kayu Tebal */
+    border-radius: 8px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3); /* Bayangan tebal biar kerasa 3D */
+    overflow: hidden; margin-bottom: 50px;
+    background: #000;
 }
 .media-box iframe { width: 100%; height: 100%; }
 
-/* 8. ISI MATERI (Seperti Buku Cerita) */
+
+/* --- 6. THE WHITEBOARDS! (Kertas Catatan Melayang) --- */
+.paper-board {
+    background: var(--paper-cream); /* Warna Kertas Krem */
+    padding: 40px;
+    border-radius: 2px; /* Sudut agak tajam kayak potongan kertas */
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.15); /* Bayangan kertas melayang */
+    margin-bottom: 40px; /* Jarak antar kertas */
+    position: relative;
+    border: 1px solid #e0dac8; /* Garis pinggir halus */
+    
+    /* Efek "Selotip" di atas kertas (Hiasan doang) */
+    &::before {
+        content: ""; position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+        width: 100px; height: 30px; background: rgba(255, 255, 255, 0.5);
+        border: 1px solid #ddd; transform: translateX(-50%) rotate(-2deg);
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    }
+}
+
+/* Typography di dalam Kertas */
 .lesson-body h3 {
-    font-family: 'Patrick Hand', cursive;
-    font-size: 2rem; color: var(--ghibli-wood);
-    margin-top: 40px; border-bottom: 2px dashed var(--ghibli-green);
-    display: inline-block;
+    font-family: 'Patrick Hand', cursive; font-size: 2rem; color: var(--forest-green);
+    margin-bottom: 20px; border-bottom: 3px dashed #ccc; display: inline-block;
 }
-.lesson-body p, li { font-size: 1.15rem; line-height: 2; color: #333; }
+.lesson-body p, li { font-size: 1.15rem; line-height: 1.9; color: #444; }
 
-/* Kotak Highlight (Catatan Tempel) */
+/* Highlight Box (Sticky Note Kuning di dalam Kertas) */
 .highlight-box {
-    background: #fffbe6; /* Kuning sticky note */
-    border-left: none; border-top: 3px solid #ffd700;
-    padding: 20px; border-radius: 0 0 10px 10px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.05);
-    font-family: 'Patrick Hand', cursive; /* Font tulisan tangan */
-    font-size: 1.3rem; color: #555;
+    background: #fffbe6; /* Kuning */
+    border-left: 5px solid #ffd700;
+    padding: 25px; margin: 25px -20px; /* Melebar dikit dari kertas utama */
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+    font-family: 'Patrick Hand', cursive;
 }
 
-/* Kartu Kecil (Polaroid Style) */
-.card-grid-small { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px;}
-.small-card {
-    background: white; padding: 15px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    transform: rotate(-2deg); /* Miring dikit biar artistik */
-    flex: 1; min-width: 200px;
-    border: 1px solid #eee;
-}
-.small-card:nth-child(2) { transform: rotate(2deg); } /* Kartu kedua miring kanan */
+/* Gambar dalam materi */
+.lesson-figure img { border-radius: 4px; border: 3px solid white; box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
+.lesson-figure figcaption { text-align: center; font-style: italic; color: #777; margin-top: 5px;}
 
-/* 9. SIDEBAR / NAVIGASI BAWAH */
-.sidebar { margin-top: 50px; border-top: 1px solid #ddd; padding-top: 30px; }
-.chapter-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+
+/* --- 7. SIDEBAR (Daftar Isi di Papan Kayu) --- */
+.sidebar {
+    background: var(--paper-cream); /* Kertas juga tapi lebih kecil */
+    padding: 30px; border-radius: 8px; height: fit-content;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.15);
+    position: sticky; top: 100px; /* Biar ikut nge-scroll */
+}
+.sidebar h3 { font-family: 'Patrick Hand', cursive; color: var(--forest-green); margin-bottom: 20px; }
 .chapter-item {
-    background: white; padding: 15px; border-radius: 10px;
-    border: 2px solid transparent; text-decoration: none;
-    transition: 0.3s; text-align: center;
+    display: flex; align-items: center; gap: 15px; padding: 12px;
+    background: white; border: 1px solid #eee; border-radius: 6px;
+    text-decoration: none; transition: 0.3s;
 }
-.chapter-item:hover { border-color: var(--ghibli-green); transform: translateY(-5px); }
-.chapter-item h4 { color: var(--ghibli-green); }
+.chapter-item:hover { border-color: var(--forest-green); transform: translateX(5px); }
+.chapter-item.active { background: #f0f7ed; border-left: 4px solid var(--forest-green); }
+.chap-info h4 { color: var(--ink-color); font-size: 1rem; margin-bottom: 3px; }
+.chap-num { color: #ccc; font-weight: bold; }
+.active .chap-num { color: var(--forest-green); }
 
-/* Responsive HP */
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    .lesson-container { padding: 20px; margin: 20px; }
-    .lesson-header h1 { font-size: 2rem; }
+    .lesson-container { grid-template-columns: 1fr; padding: 20px; }
+    .lesson-header h1 { font-size: 2.5rem; }
+    .paper-board { padding: 25px; }
+    .highlight-box { margin: 20px 0; }
 }
