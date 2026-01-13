@@ -263,3 +263,27 @@ footer {
     .hero-text { text-align: center; margin-top: 50px; padding: 0 5%;}
     .cta-buttons { justify-content: center; }
 }
+
+/* --- UPDATE LAYOUT PER KELAS --- */
+
+/* Jarak antar baris kelas biar gak nempel */
+.class-row {
+    margin-bottom: 40px; /* Jarak ke bawah */
+}
+
+/* Judul per baris (Kelas X, XI, XII) */
+.row-title {
+    color: white;
+    font-size: 1.3rem; /* Lebih kecil dikit dari judul utama */
+    font-weight: 700;
+    margin-bottom: 15px; /* Jarak judul ke kartu */
+    padding-left: 4%; /* Biar rata kiri sama kartu */
+    border-left: 4px solid var(--net-red); /* Variasi garis merah di kiri judul */
+    padding-left: 10px;
+    margin-left: 4%; /* Kompensasi padding container */
+}
+
+/* Memperbaiki container grid biar pas dengan judul */
+.netflix-grid {
+    padding: 10px 4% 20px 4%; /* Nambah padding bawah dikit */
+}
