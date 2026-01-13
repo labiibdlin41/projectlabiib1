@@ -1,7 +1,6 @@
 /* =========================================
    1. INTRO VIDEO PLAYER (AUTOPLAY)
    ========================================= */
-/* Layar Hitam Penutup */
 #intro-layer {
     position: fixed;
     top: 0;
@@ -9,24 +8,25 @@
     width: 100vw;
     height: 100vh;
     background-color: #000000;
-    z-index: 99999; /* Paling atas menutupi web */
+    z-index: 99999;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity 1s ease-out, transform 1s ease-out;
-    transform: scale(1)
+    
+    /* ⚠️ PENTING: Transisi untuk Opacity DAN Transform (Zoom) */
+    transition: opacity 1s ease-out, transform 1s ease-out; 
+    transform: scale(1); /* Posisi awal normal */
 }
 
-/* Video Player - WAJIB BLOCK AGAR KELIHATAN */
 #intro-video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Biar video full screen gak gepeng */
-    display: block; /* Dulu none, sekarang harus muncul */
+    object-fit: cover;
+    display: block; 
 }
 
 /* =========================================
-   2. GLOBAL STYLES (WEBSITE ASLI)
+   2. GLOBAL STYLES
    ========================================= */
 * {
     margin: 0;
@@ -36,7 +36,7 @@
 }
 
 body {
-    background-color: #141414; /* Hitam Netflix */
+    background-color: #141414;
     color: #ffffff;
     overflow-x: hidden;
 }
@@ -47,7 +47,6 @@ body {
     padding: 0 4%;
 }
 
-/* VARIABEL WARNA */
 :root {
     --net-red: #E50914;
     --net-dark: #141414;
@@ -55,22 +54,19 @@ body {
 }
 
 /* =========================================
-   3. HERO SECTION (BANNER UTAMA)
+   3. HERO SECTION (FULL SCREEN)
    ========================================= */
 .hero-section {
-    height: 100vh; /* Full layar mentok atas-bawah */
-    width: 100%;   /* Pastikan lebar juga full */
+    height: 100vh; /* Full Layar */
+    width: 100%;
     position: relative;
     display: flex;
     align-items: center;
-    /* Gambar background tetap sama */
     background: linear-gradient(to right, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.3)),
                 url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2070&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
 }
-
-.hero-image { display: none; } 
 
 .hero-text {
     max-width: 600px;
@@ -118,13 +114,13 @@ p {
 .btn-primary::before { content: '▶'; font-size: 0.8rem; }
 .btn-primary:hover { background-color: #c10811; }
 
-/* Animasi Panah Scroll */
+/* ⚠️ ANIMASI PANAH SCROLL */
 .scroll-down {
     position: absolute;
-    bottom: 30px; /* Jarak dari bawah layar */
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    animation: bounce 2s infinite; /* Gerak naik turun selamanya */
+    animation: bounce 2s infinite;
     color: white;
     font-size: 2rem;
     cursor: pointer;
@@ -172,7 +168,7 @@ p {
 }
 
 /* =========================================
-   5. NETFLIX CARDS (MATERI)
+   5. NETFLIX CARDS
    ========================================= */
 .netflix-section .container { padding: 0; }
 
@@ -224,7 +220,7 @@ p {
 }
 
 /* =========================================
-   6. FOOTER & RESEARCHER
+   6. FOOTER
    ========================================= */
 .researcher-box {
     background: linear-gradient(45deg, #000000, #2c0405);
@@ -245,7 +241,13 @@ footer {
 /* RESPONSIVE HP */
 @media (max-width: 768px) {
     h1 { font-size: 2.5rem; }
-    .hero-section { height: 100vh; background-position: center; }
+    
+    /* BIAR DI HP JUGA FULL LAYAR */
+    .hero-section { 
+        height: 100vh; 
+        background-position: center; 
+    }
+    
     .hero-text { text-align: center; margin-top: 50px; padding: 0 5%;}
     .cta-buttons { justify-content: center; }
 }
