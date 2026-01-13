@@ -13,7 +13,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity 1s ease-out; /* Efek memudar saat selesai */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    transform: scale(1)
 }
 
 /* Video Player - WAJIB BLOCK AGAR KELIHATAN */
