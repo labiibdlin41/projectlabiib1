@@ -268,7 +268,7 @@ footer {
 
 /* 1. Jarak antara Bagian Kategori (tombol atas) dengan Kelas X */
 .category-section {
-    margin-bottom: 150px; /* Dulu gak ada, sekarang dikasih jarak jauh */
+    margin-bottom: 80px; /* Dulu gak ada, sekarang dikasih jarak jauh */
 }
 
 /* Jarak antar baris kelas biar gak nempel */
