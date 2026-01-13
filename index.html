@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="scroll-down">
-           <span>&#8595;</span>
+            <span>&#8595;</span>
         </div>
     </header>
 
@@ -90,19 +90,21 @@
         const video = document.getElementById('intro-video');
         const layer = document.getElementById('intro-layer');
 
-        // Coba paksa play saat loading (muted wajib biar jalan)
+        // Autoplay Muted
         video.play().catch(error => {
             console.log("Autoplay error:", error);
-            // Kalau gagal play (browser lemot/block), langsung sembunyikan intro
             layer.style.display = 'none';
         });
 
-        // Pas video selesai, hilangkan layer hitam
+        // Event saat video selesai
         video.onended = function() {
-            layer.style.opacity = '0'; // Efek memudar
-            layer.style.transform = 'scale(1.2)'
+            // 1. Fade Out
+            layer.style.opacity = '0'; 
             
-            // Tunggu 0.8 detik biar efek pudar selesai, baru hapus
+            // 2. Zoom Effect (Scale Up)
+            layer.style.transform = 'scale(1.2)';
+            
+            // 3. Hapus Layer
             setTimeout(() => {
                 layer.style.display = 'none';
             }, 1000); 
