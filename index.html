@@ -100,11 +100,12 @@
         // Pas video selesai, hilangkan layer hitam
         video.onended = function() {
             layer.style.opacity = '0'; // Efek memudar
+            layer.style.transform = 'scale(1.2)'
             
             // Tunggu 0.8 detik biar efek pudar selesai, baru hapus
             setTimeout(() => {
                 layer.style.display = 'none';
-            }, 800); 
+            }, 1000); 
         };
     </script>
 
