@@ -98,13 +98,12 @@
 
         // Event saat video selesai
         video.onended = function() {
-            // 1. Fade Out
             layer.style.opacity = '0'; 
-            
-            // 2. Zoom Effect (Scale Up)
-            layer.style.transform = 'scale(1.2)';
-            
-            // 3. Hapus Layer
+
+            setTimeout(() => {
+                document.querySelector('.hero-text').classList.add('muncul-dong');
+            }, 200);
+
             setTimeout(() => {
                 layer.style.display = 'none';
             }, 1000); 
