@@ -266,6 +266,11 @@ footer {
 
 /* --- UPDATE LAYOUT PER KELAS --- */
 
+/* 1. Jarak antara Bagian Kategori (tombol atas) dengan Kelas X */
+.category-section {
+    margin-bottom: 80px; /* Dulu gak ada, sekarang dikasih jarak jauh */
+}
+
 /* Jarak antar baris kelas biar gak nempel */
 .class-row {
     margin-bottom: 40px; /* Jarak ke bawah */
@@ -274,13 +279,12 @@ footer {
 /* Judul per baris (Kelas X, XI, XII) */
 .row-title {
     color: white;
-    font-size: 1.3rem; /* Lebih kecil dikit dari judul utama */
+    font-size: 1.5rem; /* Gedein dikit font-nya */
     font-weight: 700;
-    margin-bottom: 15px; /* Jarak judul ke kartu */
-    padding-left: 4%; /* Biar rata kiri sama kartu */
-    border-left: 4px solid var(--net-red); /* Variasi garis merah di kiri judul */
-    padding-left: 10px;
-    margin-left: 4%; /* Kompensasi padding container */
+    margin-bottom: 30px; /* Jarak judul ke kartu di bawahnya */
+    padding-left: 15px;
+    border-left: 5px solid var(--net-red); /* Garis merah lebih tebal */
+    margin-left: 4%; 
 }
 
 /* Memperbaiki container grid biar pas dengan judul */
