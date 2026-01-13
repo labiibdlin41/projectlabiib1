@@ -1,120 +1,133 @@
 /* =========================================
-   1. SETUP DASAR (WAJIB ADA karena Global dihapus)
+   STYLE: GHIBLI NATURE VIBE 🌿
    ========================================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-}
 
+/* 1. IMPORT FONT BARU (Yang lebih klasik/cantik) */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Patrick+Hand&display=swap');
+
+/* 2. SETUP WARNA ALAM */
 :root {
-    --net-red: #E50914;      /* Warna Merah Utama */
-    --bg-dark: #f5f5f5;      /* Background Halaman (Abu muda banget biar bersih) */
-    --text-dark: #333333;    /* Warna Teks Utama (Hitam) */
-    --text-light: #666666;   /* Warna Teks Penjelasan (Abu tua) */
+    --ghibli-green: #4a6741;   /* Hijau Hutan Tua */
+    --ghibli-cream: #f9f7f2;   /* Warna Kertas Kuno */
+    --ghibli-sky: #87ceeb;     /* Biru Langit Pudar */
+    --ghibli-wood: #8b5a2b;    /* Coklat Kayu */
+    --text-color: #2c3e50;
 }
 
-/* =========================================
-   2. DESAIN KHUSUS HALAMAN INI (CLEAN MODE)
-   ========================================= */
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
 
+/* 3. BACKGROUND UTAMA (Pemandangan) */
 body.lesson-page {
-    background-color: var(--bg-dark);
-    color: var(--text-dark);
+    /* Ganti URL ini dengan gambar pemandangan Ghibli favoritmu nanti */
+    background-image: url('https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?q=80&w=2574&auto=format&fit=crop'); 
+    background-size: cover;
+    background-attachment: fixed; /* Biar gambarnya diem pas di-scroll */
+    background-position: center;
+    font-family: 'Lora', serif; /* Font kayak buku cerita */
+    color: var(--text-color);
 }
 
-/* Navbar Tetap Gelap Biar Keren */
+/* Biar teks kebaca, kita kasih lapisan putih transparan di atas background */
+body.lesson-page::before {
+    content: "";
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(255, 255, 255, 0.4); /* Efek kabut tipis */
+    z-index: -1;
+}
+
+/* 4. NAVBAR (Kayak Papan Kayu / Minimalis) */
 .watch-nav {
-    background-color: #111;
+    background: rgba(255, 255, 255, 0.9);
     padding: 15px 0;
+    box-shadow: 0 4px 15px rgba(74, 103, 65, 0.1);
+    backdrop-filter: blur(5px);
+    position: sticky; top: 0; z-index: 100;
 }
-.nav-flex { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-weight: 900; color: var(--net-red); letter-spacing: 1px; }
+.nav-flex { display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; padding: 0 20px;}
+.logo { font-family: 'Patrick Hand', cursive; font-size: 1.8rem; color: var(--ghibli-green); font-weight: bold; }
+.back-btn { text-decoration: none; color: var(--ghibli-green); font-weight: bold; font-family: 'Patrick Hand', cursive; font-size: 1.2rem;}
 
-/* Link Kembali */
-.back-btn {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    display: flex; align-items: center; gap: 10px;
-}
-
-/* Layout Grid */
-.container { max-width: 1200px; margin: 0 auto; padding: 0 4%; }
+/* 5. KONTAINER UTAMA (Kertas Jurnal) */
 .lesson-container {
-    display: grid;
-    grid-template-columns: 2.5fr 1fr;
-    gap: 50px;
-    padding-top: 40px;
-    padding-bottom: 80px;
+    max-width: 1000px;
+    margin: 40px auto;
+    background: var(--ghibli-cream); /* Warna Kertas */
+    padding: 50px;
+    border-radius: 15px; /* Sudut tumpul */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1); /* Bayangan lembut */
+    
+    /* Layout Grid dihapus dulu biar fokus ke "Membaca Buku" */
+    display: flex; flex-direction: column; gap: 30px;
 }
 
-/* Header Materi (Teks Hitam) */
-.lesson-header h1 { font-size: 2.5rem; margin: 10px 0; color: #111; }
-.lesson-intro { color: var(--text-light); font-size: 1.1rem; line-height: 1.6; }
-.tag { background: var(--net-red); color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; }
+/* 6. TYPOGRAPHY (Judul Cantik) */
+.lesson-header h1 {
+    font-size: 3rem; color: var(--ghibli-green);
+    margin-bottom: 10px;
+    font-style: italic;
+}
+.tag {
+    background: var(--ghibli-green); color: white;
+    padding: 5px 15px; border-radius: 50px;
+    font-family: 'Patrick Hand', cursive; letter-spacing: 1px;
+}
+.lesson-intro { font-size: 1.2rem; line-height: 1.8; color: #555; }
 
-/* Media Box */
+/* 7. VISUALISASI VIDEO (Frame Lukisan) */
 .media-box {
-    width: 100%; aspect-ratio: 16/9;
-    background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 40px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Bayangan halus */
+    border: 10px solid white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    aspect-ratio: 16/9;
 }
 .media-box iframe { width: 100%; height: 100%; }
 
-/* Typography Isi Materi (Disesuaikan Background Putih) */
+/* 8. ISI MATERI (Seperti Buku Cerita) */
 .lesson-body h3 {
-    color: var(--net-red);
-    font-size: 1.5rem; margin-top: 40px; margin-bottom: 20px;
-    border-left: 4px solid var(--net-red); padding-left: 15px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 2rem; color: var(--ghibli-wood);
+    margin-top: 40px; border-bottom: 2px dashed var(--ghibli-green);
+    display: inline-block;
 }
-.lesson-body p, .lesson-body li {
-    font-size: 1.1rem;
-    color: var(--text-dark); /* INI KUNCINYA: Teks jadi hitam */
-    line-height: 1.8; margin-bottom: 20px;
-}
+.lesson-body p, li { font-size: 1.15rem; line-height: 2; color: #333; }
 
-/* Kotak Highlight (Tetap gelap biar kontras) */
+/* Kotak Highlight (Catatan Tempel) */
 .highlight-box {
-    background: #fff; /* Kotak Putih */
-    border: 1px solid #ddd;
-    padding: 25px; border-radius: 8px; border-left: 4px solid var(--net-red);
-    margin: 20px 0;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    background: #fffbe6; /* Kuning sticky note */
+    border-left: none; border-top: 3px solid #ffd700;
+    padding: 20px; border-radius: 0 0 10px 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+    font-family: 'Patrick Hand', cursive; /* Font tulisan tangan */
+    font-size: 1.3rem; color: #555;
 }
 
-/* Kartu Kecil (Persebaran) */
-.card-grid-small { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 20px; }
+/* Kartu Kecil (Polaroid Style) */
+.card-grid-small { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px;}
 .small-card {
-    background: white; border: 1px solid #ddd;
-    padding: 15px; border-radius: 8px;
+    background: white; padding: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transform: rotate(-2deg); /* Miring dikit biar artistik */
+    flex: 1; min-width: 200px;
+    border: 1px solid #eee;
 }
-.small-card h4 { color: #111; margin-bottom: 5px; font-size: 0.9rem; }
-.small-card p { font-size: 0.8rem; margin: 0; color: #666; }
+.small-card:nth-child(2) { transform: rotate(2deg); } /* Kartu kedua miring kanan */
 
-/* Tombol Lanjut */
-.btn-primary {
-    background: var(--net-red); color: white; padding: 12px 25px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;
-}
-
-/* Sidebar (Daftar Isi) */
-.sidebar h3 { color: #111; margin-bottom: 15px; }
-.chapter-list { display: flex; flex-direction: column; gap: 10px; }
+/* 9. SIDEBAR / NAVIGASI BAWAH */
+.sidebar { margin-top: 50px; border-top: 1px solid #ddd; padding-top: 30px; }
+.chapter-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
 .chapter-item {
-    display: flex; align-items: center; gap: 15px; padding: 15px;
-    background: white; border: 1px solid #ddd; border-radius: 8px;
-    text-decoration: none; transition: 0.3s;
+    background: white; padding: 15px; border-radius: 10px;
+    border: 2px solid transparent; text-decoration: none;
+    transition: 0.3s; text-align: center;
 }
-.chapter-item:hover { border-color: var(--net-red); }
-.chapter-item.active { background: #fff0f0; border-left: 4px solid var(--net-red); }
-
-.chap-num { font-size: 1.5rem; font-weight: 900; color: #ccc; }
-.active .chap-num { color: var(--net-red); }
-.chap-info h4 { color: #111; font-size: 1rem; margin-bottom: 5px; }
-.type-icon { font-size: 0.7rem; color: #666; background: #eee; padding: 2px 6px; border-radius: 4px; }
+.chapter-item:hover { border-color: var(--ghibli-green); transform: translateY(-5px); }
+.chapter-item h4 { color: var(--ghibli-green); }
 
 /* Responsive HP */
 @media (max-width: 768px) {
-    .lesson-container { grid-template-columns: 1fr; }
+    .lesson-container { padding: 20px; margin: 20px; }
+    .lesson-header h1 { font-size: 2rem; }
 }
