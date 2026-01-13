@@ -155,74 +155,101 @@ body.lesson-page {
 }
 
 /* =========================================
-   SIDEBAR BARU: TABLE OF CONTENTS (Index) 📑
+   NEW: FLOATING MENU (FAB) 🔘✨
    ========================================= */
 
-/* Hapus style sidebar lama, ganti jadi ini */
-.sidebar {
-    position: sticky; 
-    top: 40px; /* Jarak dari atas pas di-scroll */
-    height: fit-content;
+/* 1. Hapus Grid Sidebar Lama */
+/* Karena sidebar hilang, kita bikin konten materi jadi full width tapi terpusat */
+.lesson-container {
+    display: block; /* Gak pake grid lagi */
+    max-width: 800px; /* Lebar maksimal biar enak dibaca (gak kepanjangan ke samping) */
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
-.toc-container {
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    border: 1px solid rgba(0,0,0,0.03);
-}
-
-.toc-container h3 {
-    font-family: var(--lemon-milk);
-    font-size: 1rem;
-    color: #ccc;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 25px;
-    padding-bottom: 15px;
-    border-bottom: 2px dashed #eee;
-}
-
-.toc-menu {
+/* 2. Tombol Utama (Pojok Kanan Bawah) */
+.floating-menu-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000; /* Biar selalu di paling atas */
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    align-items: flex-end; /* Rata kanan */
 }
 
-.toc-link {
-    text-decoration: none;
-    font-family: var(--body-text);
-    font-weight: bold;
-    color: var(--dark-ink);
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 10px;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-/* Nomor Index yang cantik */
-.toc-link .num {
-    font-family: var(--lemon-milk);
-    font-size: 0.8rem;
-    background: #f1f8e9; /* Hijau muda banget */
-    color: var(--pastel-green);
-    padding: 5px 10px;
-    border-radius: 6px;
-    transition: 0.3s;
-}
-
-/* Efek Hover (Pas kursor nempel) */
-.toc-link:hover {
-    background: #f9f9f9;
-    color: var(--pastel-green);
-    transform: translateX(5px); /* Geser kanan dikit */
-}
-
-.toc-link:hover .num {
+.fab-btn {
     background: var(--pastel-green);
     color: white;
+    font-family: var(--lemon-milk);
+    font-size: 0.9rem;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(136, 176, 75, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.fab-btn:hover {
+    transform: scale(1.05);
+    background: #7a9e43;
+}
+.fab-btn .icon { font-size: 1.2rem; }
+
+/* 3. Daftar Menu (Yang Sembunyi) */
+.floating-list {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+    min-width: 250px;
+    
+    /* Efek Animasi Muncul */
+    opacity: 0;
+    transform: translateY(20px);
+    visibility: hidden;
+    transition: all 0.3s ease;
+    
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* KELAS AJAIB: Kalau tombol diklik, kelas ini nempel */
+.floating-list.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.floating-list h3 {
+    font-family: var(--lemon-milk);
+    font-size: 0.8rem; color: #ccc; margin-bottom: 15px;
+    border-bottom: 2px dashed #eee; padding-bottom: 5px;
+}
+
+.floating-list a {
+    display: block;
+    text-decoration: none;
+    color: var(--dark-ink);
+    font-family: var(--body-text);
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.floating-list a:hover {
+    background: #f1f8e9;
+    color: var(--pastel-green);
+    transform: translateX(5px);
+}
+
+/* Responsive HP: Tombol agak kecil dikit */
+@media (max-width: 768px) {
+    .floating-menu-container { bottom: 20px; right: 20px; }
+    .fab-btn { padding: 12px 20px; font-size: 0.8rem; }
 }
