@@ -361,16 +361,16 @@ body.lesson-page {
 .sprite-animasi {
     /* 1. Ukuran 1 Frame (16x16 pixel) */
     width: 16px; 
-    height: 28px;
+    height: 16px;
 
     /* 2. Panggil Gambar Panjangnya */
-    background-image: url('../../img/orang.png'); 
+    background-image: url('../../img/Alex_idle_anim_16x16.png'); 
     background-repeat: no-repeat;
     
     /* 3. Animasi Jalan (Steps) */
     /* steps(4) artinya membagi gambar panjang jadi 4 frame */
-    animation: sprite-walk 0.8s steps(4) infinite;
-    
+    animation: undertale-idle 2s infinite ease-in-out;
+    background-position: -304px 0; 
     /* 4. Perbesar Ukuran (Zoom 4x lipat) */
     transform: scale(4); 
     transform-origin: bottom center; /* Membesar dari kaki ke atas */
