@@ -364,12 +364,12 @@ body.lesson-page {
 /* --- SETTING KUDA (ASEPRITE EXPORT) --- */
 
 .kuda {
-    width: 39px;
+    width: 80px;
     left: 40%;
-    height: 32px;
+    height: 64px;
     background-image: url('../../img/Horse-0001.png'); 
     background-repeat: no-repeat;
-    animation: idle-kuda 0.6s steps(3) infinite;
+    animation: idle-kuda 0.6s steps(4) infinite;
     transform: scale(2.5); 
     transform-origin: bottom center;
     image-rendering: pixelated;
