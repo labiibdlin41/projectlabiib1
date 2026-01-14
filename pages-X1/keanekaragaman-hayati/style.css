@@ -300,52 +300,26 @@ body.lesson-page {
     font-size: 0.9rem;
 }
 
-<<<<<<< HEAD
 /* =========================================
    STYLE: RPG SCENE (UNDERTALE VIBE) 🎮
    ========================================= */
 
-=======
-/* --- SETTING POSISI UMUM --- */
->>>>>>> 9f24b98b1a3d77b1f297f56326b7b38e1410104d
 .rpg-scene {
     position: relative;
     width: 100%;
-<<<<<<< HEAD
     height: 300px;
     background-color: transparent;
     overflow: hidden;
     margin-bottom: 20px;
-=======
-    height: 300px;
-    background-color: transparent;
-    overflow: hidden;
->>>>>>> 9f24b98b1a3d77b1f297f56326b7b38e1410104d
 }
 
-<<<<<<< HEAD
 /* Biar gambar tajam (Pixel Art Wajib!) */
 .rpg-scene img, .sprite-animasi, .pixel-ground {
     image-rendering: pixelated; 
     image-rendering: crisp-edges;
-=======
-.pixel-object {
-    position: absolute;
-    bottom: 40px; /* Berdiri di atas tanah */
-    z-index: 3;
->>>>>>> 9f24b98b1a3d77b1f297f56326b7b38e1410104d
-}
-
-<<<<<<< HEAD
-/* --- TANAH --- */
-=======
-/* Biar gambar tajam (Pixel Art Style) */
-.rpg-scene img, .sprite-animasi, .pixel-ground {
-    image-rendering: pixelated;
 }
 
 /* --- TANAH --- */
->>>>>>> 9f24b98b1a3d77b1f297f56326b7b38e1410104d
 .pixel-ground {
     position: absolute;
     bottom: 0;
