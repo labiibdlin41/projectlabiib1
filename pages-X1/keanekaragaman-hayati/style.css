@@ -335,7 +335,7 @@ body.lesson-page {
 }
 .tree {
     position: absolute;
-    bottom: 34px;
+    bottom: 30px;
     left: 2%;
     width: 180px;
     z-index: 1;
