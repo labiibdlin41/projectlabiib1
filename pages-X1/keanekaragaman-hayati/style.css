@@ -356,9 +356,6 @@ body.lesson-page {
 /* --- SETTING ORANG (SPRITE SHEET ANIMATION) --- */
 .person {
     left: 20%; /* Posisi berdiri */
-}
-
-.sprite-animasi {
     /* 1. Ukuran 1 Frame (16x16 pixel) */
     width: 16px; 
     height: 33px;
@@ -390,13 +387,14 @@ body.lesson-page {
 
 /* --- SETTING KUDA (ASEPRITE EXPORT) --- */
 
-.sprite-kuda {
+.kuda {
     width: 39px;
+    left: 40%;
     height: 32px;
     background-image: url('../../img/Horse-0001.png'); 
     background-repeat: no-repeat;
     animation: idle-kuda 0.6s steps(3) infinite;
-    transform: scale(2.5) scaleX(-1); 
+    transform: scale(1.5); 
     transform-origin: bottom center;
     image-rendering: pixelated;
 }
