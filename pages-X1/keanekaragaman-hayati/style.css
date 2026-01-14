@@ -361,7 +361,7 @@ body.lesson-page {
 .sprite-animasi {
     /* 1. Ukuran 1 Frame (16x16 pixel) */
     width: 16px; 
-    height: 36px;
+    height: 28px;
 
     /* 2. Panggil Gambar Panjangnya */
     background-image: url('../../img/Alex_idle_anim_16x16.png'); 
@@ -372,7 +372,7 @@ body.lesson-page {
     animation: jalan-depan 1s steps(6) infinite;
     
     /* 4. Perbesar Ukuran (Zoom 4x lipat) */
-    transform: scale(4); 
+    transform: scale(3); 
     transform-origin: bottom center; /* Membesar dari kaki ke atas */
     image-rendering: pixelated;
 }
