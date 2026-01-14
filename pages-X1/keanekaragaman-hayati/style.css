@@ -343,7 +343,7 @@ body.lesson-page {
 .tree img { width: 100%; display: block;}
 
 .person {
-    left: 20%; /* Posisi berdiri */
+    left: 24%; /* Posisi berdiri */
     width: 16px; 
     height: 33px;
     background-image: url('../../img/Alex_idle_anim_16x16.png'); 
