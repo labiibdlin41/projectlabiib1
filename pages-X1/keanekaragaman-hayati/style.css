@@ -340,20 +340,11 @@ body.lesson-page {
 
 /* --- SETTING POHON & HEWAN (GAMBAR BIASA) --- */
 .tree {
-    left: 5%;
+    left: 2%;
     width: 200px;
     z-index: 1;
 }
-.tree img { width: 100%; display: block; }
-
-.animal {
-    right: 25%;
-    width: 45px;
-}
-.animal img { width: 100%; display: block; }
-
-
-/* --- SETTING ORANG (SPRITE SHEET ANIMATION) --- */
+.tree img { width: 100%; display: block;}
 .person {
     left: 20%; /* Posisi berdiri */
     /* 1. Ukuran 1 Frame (16x16 pixel) */
