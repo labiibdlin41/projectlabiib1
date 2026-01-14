@@ -379,5 +379,5 @@ body.lesson-page {
 /* 39px lebar x 3 frame = 117px total */
 @keyframes idle-kuda {
     from { background-position: 0 0; }
-    to { background-position: -117px 0; } /* Geser sejauh 117px */
+    to { background-position: -320px 0; } /* Geser sejauh 117px */
 }
