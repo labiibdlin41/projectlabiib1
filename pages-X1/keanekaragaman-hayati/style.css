@@ -341,7 +341,7 @@ body.lesson-page {
 /* --- SETTING POHON & HEWAN (GAMBAR BIASA) --- */
 .tree {
     left: 5%;
-    width: 100px;
+    width: 200px;
     z-index: 1;
 }
 .tree img { width: 100%; display: block; }
@@ -372,7 +372,7 @@ body.lesson-page {
     animation: idle-orang 1s steps(6) infinite;
     
     /* 4. Perbesar Ukuran (Zoom 4x lipat) */
-    transform: scale(3); 
+    transform: scale(2); 
     transform-origin: bottom center; /* Membesar dari kaki ke atas */
     image-rendering: pixelated;
 }
