@@ -330,28 +330,24 @@ body.lesson-page {
 }
 .pixel-object {
     position: absolute;
-    bottom: 35px; /* Berdiri di atas tanah */
+    bottom: 37px; /* Berdiri di atas tanah */
     z-index: 3;
 }
 .tree {
+    position: absolute;
+    bottom: 34px;
     left: 2%;
-    width: 200px;
+    width: 180px;
     z-index: 1;
 }
 .tree img { width: 100%; display: block;}
 
 .person {
     left: 20%; /* Posisi berdiri */
-    /* 1. Ukuran 1 Frame (16x16 pixel) */
     width: 16px; 
     height: 33px;
-
-    /* 2. Panggil Gambar Panjangnya */
     background-image: url('../../img/Alex_idle_anim_16x16.png'); 
     background-repeat: no-repeat;
-    
-    /* 3. Animasi Jalan (Steps) */
-    /* steps(4) artinya membagi gambar panjang jadi 4 frame */
     animation: idle-orang 1s steps(6) infinite;
     
     /* 4. Perbesar Ukuran (Zoom 4x lipat) */
