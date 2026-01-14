@@ -314,12 +314,10 @@ body.lesson-page {
 }
 
 /* Biar gambar tajam (Pixel Art Wajib!) */
-.rpg-scene img, .sprite-animasi, .pixel-ground {
+.rpg-scene img, .person, .pixel-ground, .kuda, .tree {
     image-rendering: pixelated; 
     image-rendering: crisp-edges;
 }
-
-/* --- TANAH --- */
 .pixel-ground {
     position: absolute;
     bottom: 0;
@@ -330,21 +328,18 @@ body.lesson-page {
     background-repeat: repeat-x;
     z-index: 2;
 }
-
-/* --- POSISI OBJEK --- */
 .pixel-object {
     position: absolute;
     bottom: 35px; /* Berdiri di atas tanah */
     z-index: 3;
 }
-
-/* --- SETTING POHON & HEWAN (GAMBAR BIASA) --- */
 .tree {
     left: 2%;
     width: 200px;
     z-index: 1;
 }
 .tree img { width: 100%; display: block;}
+
 .person {
     left: 20%; /* Posisi berdiri */
     /* 1. Ukuran 1 Frame (16x16 pixel) */
