@@ -361,7 +361,7 @@ body.lesson-page {
 .sprite-animasi {
     /* 1. Ukuran 1 Frame (16x16 pixel) */
     width: 16px; 
-    height: 16px;
+    height: 36px;
 
     /* 2. Panggil Gambar Panjangnya */
     background-image: url('../../img/Alex_idle_anim_16x16.png'); 
