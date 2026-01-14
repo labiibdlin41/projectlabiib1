@@ -369,15 +369,21 @@ body.lesson-page {
     
     /* 3. Animasi Jalan (Steps) */
     /* steps(4) artinya membagi gambar panjang jadi 4 frame */
-    animation: undertale-idle 2s infinite ease-in-out;
-    background-position: -304px 0; 
+    animation: jalan-depan 1s steps(6) infinite;
+    
     /* 4. Perbesar Ukuran (Zoom 4x lipat) */
     transform: scale(4); 
     transform-origin: bottom center; /* Membesar dari kaki ke atas */
+    image-rendering: pixelated;
 }
 
-/* Rumus Geser: 16px lebar x 4 orang = 64px total lebar */
-@keyframes sprite-walk {
-    from { background-position: 0 0; }
-    to { background-position: -64px 0; } /* Geser ke kiri sejauh lebar total */
+@keyframes jalan-depan {
+    from { 
+        /* Mulai dari Frame 19 (18 frame x 16px = 288px) */
+        background-position: -288px 0; 
+    }
+    to { 
+        /* Berhenti di Frame 24 (24 frame x 16px = 384px) */
+        background-position: -384px 0; 
+    }
 }
