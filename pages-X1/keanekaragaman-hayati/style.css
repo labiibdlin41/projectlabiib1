@@ -324,7 +324,7 @@ body.lesson-page {
     width: 100%;
     height: 40px;
     /* Perbaikan Path: Mundur 2 folder */
-    background-image: url('../../img/tanah.png'); 
+    background-image: url('../../img/Floor1.png'); 
     background-repeat: repeat-x;
     z-index: 2;
 }
