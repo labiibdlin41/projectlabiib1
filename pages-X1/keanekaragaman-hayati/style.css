@@ -324,20 +324,13 @@ body.lesson-page {
     position: absolute;
     bottom: 0;
     width: 100%;
-<<<<<<< HEAD
     height: 40px;
     /* Perbaikan Path: Mundur 2 folder */
     background-image: url('../../img/tanah.png'); 
     background-repeat: repeat-x;
-=======
-    height: 40px;
-    background-image: url('../../img/tanah.png'); /* Sesuaikan nama file */
-    background-repeat: repeat-x;
->>>>>>> 9f24b98b1a3d77b1f297f56326b7b38e1410104d
     z-index: 2;
 }
 
-<<<<<<< HEAD
 /* --- POSISI OBJEK --- */
 .pixel-object {
     position: absolute;
@@ -350,72 +343,26 @@ body.lesson-page {
     left: 5%;
     width: 100px;
     z-index: 1;
-=======
-/* --- ANIMASI ORANG (UNDERTALE STYLE) --- */
-.person {
-    left: 20%; /* Posisi orang dari kiri layar */
->>>>>>> 9f24b98b1a3d77b1f297f56326b7b38e1410104d
 }
 .tree img { width: 100%; display: block; }
 
-<<<<<<< HEAD
 .animal {
     right: 25%;
     width: 45px;
 }
 .animal img { width: 100%; display: block; }
-=======
-.sprite-animasi {
-    /* 1. UKURAN SATU KOTAK (16x16) */
-    width: 16px;
-    height: 16px;
->>>>>>> 9f24b98b1a3d77b1f297f56326b7b38e1410104d
 
-<<<<<<< HEAD
-=======
-    /* 2. PANGGIL GAMBAR PANJANGNYA */
-    /* Pastikan filenya orang.png adalah yg sprite sheet panjang */
-    background-image: url('../../img/orang.png'); 
-    background-repeat: no-repeat;
-    
-    /* 3. ANIMASI JALAN (Steps) */
-    /* steps(4) = membagi gambar jadi 4 frame patah-patah */
-    animation: sprite-walk 0.8s steps(4) infinite;
-    
-    /* 4. PERBESAR UKURAN */
-    /* Karena 16px itu kecil banget, kita zoom 4x lipat */
-    transform: scale(4); 
-    transform-origin: bottom center; /* Zoom dari kaki */
-}
->>>>>>> 9f24b98b1a3d77b1f297f56326b7b38e1410104d
 
-<<<<<<< HEAD
 /* --- SETTING ORANG (SPRITE SHEET ANIMATION) --- */
 .person {
     left: 20%; /* Posisi berdiri */
-=======
-/* Rumus Geser: Lebar 16px * 4 frame = 64px */
-@keyframes sprite-walk {
-    from { background-position: 0 0; }
-    to { background-position: -64px 0; } /* Geser ke kiri sejauh 64px */
->>>>>>> 9f24b98b1a3d77b1f297f56326b7b38e1410104d
 }
 
-<<<<<<< HEAD
 .sprite-animasi {
     /* 1. Ukuran 1 Frame (16x16 pixel) */
     width: 16px; 
     height: 16px;
-=======
-/* --- HEWAN & POHON (DIAM) --- */
-.animal {
-    right: 25%;
-    width: 45px; /* Sesuaikan ukuran hewan */
-}
-.animal img { width: 100%; }
->>>>>>> 9f24b98b1a3d77b1f297f56326b7b38e1410104d
 
-<<<<<<< HEAD
     /* 2. Panggil Gambar Panjangnya */
     background-image: url('../../img/orang.png'); 
     background-repeat: no-repeat;
@@ -427,20 +374,10 @@ body.lesson-page {
     /* 4. Perbesar Ukuran (Zoom 4x lipat) */
     transform: scale(4); 
     transform-origin: bottom center; /* Membesar dari kaki ke atas */
-=======
-.tree {
-    left: 5%;
-    width: 100px;
-    z-index: 1; 
->>>>>>> 9f24b98b1a3d77b1f297f56326b7b38e1410104d
 }
-<<<<<<< HEAD
 
 /* Rumus Geser: 16px lebar x 4 orang = 64px total lebar */
 @keyframes sprite-walk {
     from { background-position: 0 0; }
     to { background-position: -64px 0; } /* Geser ke kiri sejauh lebar total */
 }
-=======
-.tree img { width: 100%; }
->>>>>>> 9f24b98b1a3d77b1f297f56326b7b38e1410104d
