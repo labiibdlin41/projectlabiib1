@@ -300,82 +300,78 @@ body.lesson-page {
     font-size: 0.9rem;
 }
 
-/* --- 1. SETTING WADAH UTAMA --- */
+/* --- SETTING POSISI UMUM --- */
 .rpg-scene {
     position: relative;
     width: 100%;
-    height: 300px; /* Tinggi area gambar */
-    background-color: transparent; /* Background transparan */
-    overflow: hidden; /* Biar rapi */
-    margin-bottom: 20px; /* Jarak ke tulisan bawahnya */
+    height: 300px;
+    background-color: transparent;
+    overflow: hidden;
 }
 
-/* --- 2. RAHASIA PIXEL ART TAJAM --- */
-/* Wajib ada biar gambar gak burem/blur */
-.rpg-scene img, .pixel-ground {
-    image-rendering: pixelated; 
-    image-rendering: crisp-edges;
+.pixel-object {
+    position: absolute;
+    bottom: 40px; /* Berdiri di atas tanah */
+    z-index: 3;
 }
 
-/* --- 3. ATUR TANAH --- */
+/* Biar gambar tajam (Pixel Art Style) */
+.rpg-scene img, .sprite-animasi, .pixel-ground {
+    image-rendering: pixelated;
+}
+
+/* --- TANAH --- */
 .pixel-ground {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 40px; /* Sesuaikan tinggi gambar tanahmu */
-    background-image: url('img/tanah.png'); 
-    background-repeat: repeat-x; /* Ulang tanah ke samping */
+    height: 40px;
+    background-image: url('../../img/tanah.png'); /* Sesuaikan nama file */
+    background-repeat: repeat-x;
     z-index: 2;
 }
 
-/* --- 4. ATUR POSISI UMUM --- */
-.pixel-object {
-    position: absolute;
-    bottom: 35px; /* Berdiri pas di atas tanah */
-    z-index: 3;
-}
-/* Agar gambar menyesuaikan lebar kotaknya */
-.pixel-object img {
-    width: 100%;
-    display: block;
-}
-
-/* --- 5. ATUR UKURAN & POSISI MASING-MASING --- */
-
-/* Orang */
+/* --- ANIMASI ORANG (UNDERTALE STYLE) --- */
 .person {
-    left: 20%; /* Jarak dari kiri */
-    width: 60px; /* GEDEIN/KECILIN ORANG DI SINI */
+    left: 20%; /* Posisi orang dari kiri layar */
 }
 
-/* Hewan */
+.sprite-animasi {
+    /* 1. UKURAN SATU KOTAK (16x16) */
+    width: 16px;
+    height: 16px;
+
+    /* 2. PANGGIL GAMBAR PANJANGNYA */
+    /* Pastikan filenya orang.png adalah yg sprite sheet panjang */
+    background-image: url('../../img/orang.png'); 
+    background-repeat: no-repeat;
+    
+    /* 3. ANIMASI JALAN (Steps) */
+    /* steps(4) = membagi gambar jadi 4 frame patah-patah */
+    animation: sprite-walk 0.8s steps(4) infinite;
+    
+    /* 4. PERBESAR UKURAN */
+    /* Karena 16px itu kecil banget, kita zoom 4x lipat */
+    transform: scale(4); 
+    transform-origin: bottom center; /* Zoom dari kaki */
+}
+
+/* Rumus Geser: Lebar 16px * 4 frame = 64px */
+@keyframes sprite-walk {
+    from { background-position: 0 0; }
+    to { background-position: -64px 0; } /* Geser ke kiri sejauh 64px */
+}
+
+/* --- HEWAN & POHON (DIAM) --- */
 .animal {
-    right: 25%; /* Jarak dari kanan */
-    width: 45px; /* GEDEIN/KECILIN HEWAN DI SINI */
+    right: 25%;
+    width: 45px; /* Sesuaikan ukuran hewan */
 }
+.animal img { width: 100%; }
 
-/* Pohon */
 .tree {
     left: 5%;
-    width: 100px; /* GEDEIN/KECILIN POHON DI SINI */
-    z-index: 1; /* Pohon di belakang orang */
+    width: 100px;
+    z-index: 1; 
 }
-
-
-/* --- 6. ANIMASI GERAK (NAIK TURUN) --- */
-/* Ini yang bikin dia seolah-olah bernapas/hidup */
-
-.person, .animal {
-    animation: rpg-idle 1.5s infinite ease-in-out;
-}
-
-/* Hewan speednya beda dikit biar natural */
-.animal {
-    animation-duration: 2s;
-}
-
-@keyframes rpg-idle {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-5px); } /* Naik 5 pixel */
-    100% { transform: translateY(0); }
-}
+.tree img { width: 100%; }
