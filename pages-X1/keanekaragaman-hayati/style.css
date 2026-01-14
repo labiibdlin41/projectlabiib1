@@ -344,11 +344,11 @@ body.lesson-page {
 
 .person {
     left: 24%; /* Posisi berdiri */
-    width: 16px; 
-    height: 33px;
-    background-image: url('../../img/Alex_idle_anim_16x16.png'); 
+    width: 29px; 
+    height: 64px;
+    background-image: url('../../img/Idle_Pompadour_Man-0001.png'); 
     background-repeat: no-repeat;
-    animation: idle-orang 1s steps(6) infinite;
+    animation: idle-orang 1.5s steps(5) infinite;
     
     /* 4. Perbesar Ukuran (Zoom 4x lipat) */
     transform: scale(2); 
@@ -357,14 +357,8 @@ body.lesson-page {
 }
 
 @keyframes idle-orang {
-    from { 
-        /* Mulai dari Frame 19 (18 frame x 16px = 288px) */
-        background-position: -288px 0; 
-    }
-    to { 
-        /* Berhenti di Frame 24 (24 frame x 16px = 384px) */
-        background-position: -384px 0; 
-    }
+    from {background-position: 0 0;}
+    to {background-position: -145px 0;}
 }
 
 /* --- SETTING KUDA (ASEPRITE EXPORT) --- */
