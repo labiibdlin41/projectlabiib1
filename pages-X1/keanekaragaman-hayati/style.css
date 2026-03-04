@@ -6,14 +6,14 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800&family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
-    --canvas-bg: #fdfcf6;
-    --paper-white: #ffffff;
+    --canvas-bg: #141414;
+    --paper-white: #181818;
     --lemon-milk: 'League Spartan', sans-serif;
-    --body-text: 'Montserrat', serif;
+    --body-text: 'Montserrat', sans-serif;
     
-    --pastel-green: #88b04b;
-    --pastel-brown: #d7bfa6;
-    --dark-ink: #212121;
+    --pastel-green: #E50914; 
+    --pastel-brown: #ffffff;
+    --dark-ink: #e5e5e5;
 }
 
 /* 2. BACKGROUND KANVAS POLOS */
@@ -110,9 +110,8 @@ body.lesson-page {
     margin-bottom: 20px;
 }
 
-/* Highlight Box (Pastel Green) */
 .highlight-box {
-    background: #f1f8e9; /* Hijau muda banget */
+    background: #222222;
     border-radius: 15px;
     padding: 30px; margin: 30px 0;
     border-left: 5px solid var(--pastel-green);
@@ -203,20 +202,17 @@ body.lesson-page {
 
 /* 3. Daftar Menu (Yang Sembunyi) */
 .floating-list {
-    background: white;
+    background: #181818;
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
     margin-bottom: 15px;
     min-width: 250px;
-    
-    /* Efek Animasi Muncul */
     opacity: 0;
     transform: translateY(20px);
     visibility: hidden;
     transition: all 0.3s ease;
-    
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid #333;
 }
 
 /* KELAS AJAIB: Kalau tombol diklik, kelas ini nempel */
@@ -244,7 +240,7 @@ body.lesson-page {
 }
 
 .floating-list a:hover {
-    background: #f1f8e9;
+    background: #333333;
     color: var(--pastel-green);
     transform: translateX(5px);
 }
@@ -262,20 +258,20 @@ body.lesson-page {
 
 /* Kelas tambahan untuk wadah kosong */
 .placeholder-content {
-    background-color: #f9f9f9; /* Abu sangat muda */
-    border: 3px dashed #d1d5db; /* Garis putus-putus */
+    background-color: #222222; 
+    border: 3px dashed #444444; 
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    min-height: 300px; /* Tinggi minimal biar kotak gak gepeng */
+    min-height: 300px; 
     border-radius: 15px;
     transition: 0.3s;
-    cursor: pointer; /* Biar kerasa bisa diedit */
+    cursor: pointer; 
 }
 
 .placeholder-content:hover {
-    background-color: #f0fdf4; /* Jadi hijau muda pas disentuh */
+    background-color: #333333; 
     border-color: var(--pastel-green);
 }
 
